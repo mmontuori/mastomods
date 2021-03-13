@@ -1,0 +1,24 @@
+#!/bin/bash
+
+MAS_DIR="/home/mastodon/live"
+REPO_DIR="/home/mastodon/git-repos/mastomods"
+APP_DIR="app/javascript/styles"
+THEME_NAME="napoli_social"
+
+if ! test -d ${MAS_DIR}; then
+	echo "EROOR: directory ${MAS_DIR} not found!"
+	exit 1
+fi
+
+if ! test -d ${REPO_DIR}; then
+	echo "EROOR: directory ${REPO_DIR} not found!"
+	exit 1
+fi
+
+echo "updating theme ${THEME_NAME}..."
+echo "src directory: ${REPO_DIR}/${APP_DIR}"
+echo "dst directory: ${MAS_DIR}/${APP_DIR}"
+cp -R ${REPO_DIR}/${APP_DIR}/${THEME_NAME}* ${MAS_DIR}/${APP_DIR}/
+
+cd ${MAS_DIR}
+RAILS_ENV=production bundle exec rails assets:precompile
