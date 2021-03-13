@@ -42,6 +42,11 @@
 /* linernotes dark */
 
 :root {
+	--textHead: var(--textBold);
+	--accentText: var(--textBold);
+}
+
+:root {
 --bg: rgb(26,21,21);
 --text: rgb(225,225,225);
 --textBold: rgb(255,255,255);
@@ -52,8 +57,8 @@
 --textPageBold: var(--textBold);
 --textPageMuted: var(--textMuted);
 
---bgHead: rgb(255,122,23);
+--bgHead: rgb(0,153,255);
 --textHead: var(--textBold);
---accent: rgb(3, 180, 0);
+--accent: rgb(102,194,255);
 --accentText: var(--textBold);
 }
