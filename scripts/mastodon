@@ -8,11 +8,11 @@ if [ "$1" == "stop" ]; then
 	echo "stopping mastodon..."
 	sudo systemctl stop mastodon-sidekiq
 	sudo systemctl stop mastodon-web
-elif [ "$2" == "start" ]; then
+elif [ "$1" == "start" ]; then
 	echo "starting mastodon..."
 	sudo systemctl start mastodon-sidekiq
 	sudo systemctl start mastodon-web
-elif [ "$2" == "restart" ]; then
+elif [ "$1" == "restart" ]; then
 	echo "restart mastodon..."
 	sudo systemctl restart mastodon-sidekiq
 	sudo systemctl reload mastodon-web
